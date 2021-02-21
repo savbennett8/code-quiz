@@ -5,20 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz Challenge</title>
-    <link type=script src="./assets/js/script.js"></link>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
-    <header>
+    <div id="container">
+        <div class="flex-container">
+            <div>
+                <p id="scores">View High Scores</p>
+            </div>
+            <div id="timer">
+                <p>Time: <span class="count">75</span></p>
+            </div>
+        </div>
+    <!-- Start Section -->
         <div>
-            View High Scores
+            <h1 id="title">Coding Quiz Challenge</h1>
         </div>
         <div>
-            Time: 75
+            <p id="rules">Try to answer the code-related questions before the time runs out. 
+                If you answer incorrectly, 10 seconds will be subtracted from the clock.</p>
         </div>
-    </header>
-    <h1>Coding Quiz Challenge</h1>
-    <p>Try to answer the code-related questions before the time runs out. If you answer incorrectly, 10 seconds will be subtracted from the clock. </p>
+        <div>
+            <button id="start">Start Quiz</button>
+        </div>
+
+    <!-- Quiz Section -->
+
+        <div id="quiz">
+    <!-- Quiz Questions -->
+            <div id="question">
+                <h2 id="questionText"></h2>
+            </div>
+
+    <!-- Quiz Choices -->
+            <div id="optionList">
+                <h4 class="choice_que" id="option1"></h4>
+                <h4 class="choice_que" id="option2"></h4>
+                <h4 class="choice_que" id="option3"></h4>
+                <h4 class="choice_que" id="option4"></h4>
+            </div>
+        </div>
+
+    <!-- Result Section -->
+        <div id="result">
+            <h3>All Done!</h3>
+            <h3 id="points">Your final score is 0</h3>
+            <h3 id="initials">Enter your initials</h3>
+            <button id="submit">Submit</button>
+        </div>
+    </div>
     
-    
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
