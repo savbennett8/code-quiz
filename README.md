@@ -8,4 +8,4 @@
 
 https://savbennett8.github.io/code-quiz/
 
-<img src=>
+<img src="./screenshot.jpg">
