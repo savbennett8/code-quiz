@@ -10,17 +10,19 @@
 //then they are taken to the high scores page
 //given the option to go back to start page or clear high scores
 
-let timer = 75;
 let interval = 0;
 let correct = 0;
 let index = 0;
 
 //Start Section
+let startSection = document.querySelector("#container");
+let timerEl = document.querySelector(".count");
 let quizTitle = document.querySelector("#title");
 let rules = document.querySelector("#rules");
 let start = document.querySelector("#start");
 
 //quiz section
+let quizSection = document.querySelector(".quiz-box");
 let quiz = document.querySelector("#quiz");
 let question = document.querySelector("#questionText");
 
@@ -81,26 +83,32 @@ let MCQS = [{
 
 //when start quiz button is clicked
 start.addEventListener("click", function() {
-    let ref = window.open("./index2.html");
     //first question is presented
-    //quiz.style.display = "block";
+    startSection.style.opacity = 0;
+    quizSection.style.opacity = 1;
+    
     //loadData();
     //countDown starts
-    //interval = setInterval(countDown, 1000);
+    countDown();
 });
 
-//timer for quiz
-let countDown = function() {
-    timer--;
-    time.innerText = timer;
-    console.log(timer);
-    if (timer === 0) {
+function countDown() {
+    let timeLeft = 75;
+
+    //timer for quiz
+    let timeInterval = setInterval(function() {
+        if (timer === 0) {
         //end quiz
-    } else {
-        //next question
-    }
+        clearInterval(timeInterval);
+        } else {
+            timerEl.textContent = timeLeft;
+            timeLeft--;
+        }
+    }, 1000);
+    //setInterval(countDown,1000);
 }
-//setInterval(countDown,1000);
+
+
 
 let loadData = function() {
     question.innerText = MCQS[index].question;
@@ -108,8 +116,6 @@ let loadData = function() {
     option2.innerText = MCQS[index].choice2;
     option3.innerText = MCQS[index].choice3;
     option4.innerText = MCQS[index].choice4;
-    
-    timer = 75;
 }
 
 choice_que.forEach((choices, choiceNo) =>{
