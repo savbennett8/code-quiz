@@ -81,11 +81,12 @@ let MCQS = [{
 
 //when start quiz button is clicked
 start.addEventListener("click", function() {
+    let ref = window.open("./index2.html");
     //first question is presented
     //quiz.style.display = "block";
-    loadData();
+    //loadData();
     //countDown starts
-    interval = setInterval(countDown, 1000);
+    //interval = setInterval(countDown, 1000);
 });
 
 //timer for quiz
@@ -111,7 +112,7 @@ let loadData = function() {
     timer = 75;
 }
 
-choice_que.forEach((choices,choiceNo) =>{
+choice_que.forEach((choices, choiceNo) =>{
     choices.addEventListener("click", ()=>{
         choices.classList.add("active");
         //check answer
@@ -122,4 +123,4 @@ choice_que.forEach((choices,choiceNo) =>{
             //subtract 10 seconds from timer
         }
     });
-}
+})

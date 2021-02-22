@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
-    <div id="container">
+    
+    <!-- Top Content -->
         <div class="flex-container">
             <div>
                 <p id="scores">View High Scores</p>
@@ -17,42 +18,54 @@
                 <p>Time: <span class="count">75</span></p>
             </div>
         </div>
+    <div id="container">
     <!-- Start Section -->
-        <div>
-            <h1 id="title">Coding Quiz Challenge</h1>
-        </div>
-        <div>
-            <p id="rules">Try to answer the code-related questions before the time runs out. 
+        <div id="start-section">
+            <div>
+                <h1 id="title">Coding Quiz Challenge</h1>
+            </div>
+            <div>
+                <p id="rules">Try to answer the code-related questions before the time runs out. 
                 If you answer incorrectly, 10 seconds will be subtracted from the clock.</p>
+            </div>
+            <div>
+                <button id="start">Start Quiz</button>
+            </div>
         </div>
-        <div>
-            <button id="start">Start Quiz</button>
-        </div>
+    </div>
 
-    <!-- Quiz Section -->
-
-        <div id="quiz">
-    <!-- Quiz Questions -->
+    <div class="quiz-box">
+        <header>
             <div id="question">
-                <h2 id="questionText"></h2>
+                <h2 id="questionText">What does HTML stand for?</h2>
             </div>
-
-    <!-- Quiz Choices -->
+        </header>
+        <section>
             <div id="optionList">
-                <h4 class="choice_que" id="option1"></h4>
-                <h4 class="choice_que" id="option2"></h4>
-                <h4 class="choice_que" id="option3"></h4>
-                <h4 class="choice_que" id="option4"></h4>
+                <h4 class="choice_que" id="option1">1. blah blah blah</h4>
+                <h4 class="choice_que" id="option2">2. blah blah blah blah</h4>
+                <h4 class="choice_que" id="option3">3. blah blah blah</h4>
+                <h4 class="choice_que" id="option4">4. blah blah blah</h4>
             </div>
-        </div>
+        </section>
+
+        <!-- Quiz Box Footer -->
+        <footer>
+            <div class="footer">
+                <h3>Correct!</h3>
+            </div>
+        </footer>
+    </div>
 
     <!-- Result Section -->
-        <div id="result">
-            <h3>All Done!</h3>
-            <h3 id="points">Your final score is 0</h3>
-            <h3 id="initials">Enter your initials</h3>
-            <button id="submit">Submit</button>
-        </div>
+    <div id="result">
+        <h3>All Done!</h3>
+        <h3>Your final score is <span id="final-score">0</span></h3>
+        <form>
+            <label id="initials">Enter your initials</label>
+            <input class="form-input" type="text"/>
+        </form>
+        <button id="submit">Submit</button>
     </div>
     
     <script src="./assets/js/script.js"></script>

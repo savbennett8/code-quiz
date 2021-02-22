@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="html" href="./index.html"/>
+</head>
+<body>
+    <div class="flex-container">
+        <div>
+            <p id="scores">View High Scores</p>
+        </div>
+        <div id="timer">
+            <p>Time: <span class="count">75</span></p>
+        </div>
+    </div>
+    
+    <!-- Quiz Section -->
+
+    <div id="quiz">
+        <!-- Quiz Questions -->
+                <div id="question">
+                    <h2 id="questionText"></h2>
+                </div>
+    
+        <!-- Quiz Choices -->
+                <div id="optionList">
+                    <h4 class="choice_que" id="option1"></h4>
+                    <h4 class="choice_que" id="option2"></h4>
+                    <h4 class="choice_que" id="option3"></h4>
+                    <h4 class="choice_que" id="option4"></h4>
+                </div>
+            </div>
+    
+        <!-- Result Section -->
+            <div id="result">
+                <h3>All Done!</h3>
+                <h3 id="points">Your final score is 0</h3>
+                <form>
+                    <label id="initials">Enter your initials</label>
+                    <input class="form-input" type="text"/>
+                </form>
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+        
+        <script src="./assets/js/script.js"></script>
+</body>
+</html>

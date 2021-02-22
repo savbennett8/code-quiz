@@ -7,21 +7,56 @@
 }
 
 body {
-    display: grid;
+    /*display: grid;
     place-items: center;
-    height: 100vh;
+    height: 100vh;*/
     background: #d4e0ee;
 }
 
-#container {
-    height: auto;
-    width: 900px;
+#container,
+.quiz-box,
+#result {
+    /*height: auto;
+    width: 900px;*/
     text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#container {
+    
+}
+
+#start,
+#submit {
+    height: 40px;
+    width: 150px;
+    margin: 22px;
+    text-align: center;
+    background: #410a80;
+    color: rgb(255, 253, 253);
+    font-size: 18px;
+    font-weight: 150;
+    border-radius: 10px 10px;
+    border: 2px solid #b0c4d8;
+    cursor: pointer;
+}
+
+#start:hover,
+#submit:hover {
+    background: #8d35ff;
+    color: #e7f1fa;
 }
 
 .flex-container {
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    top: 22%;
+    width: 750px;
+    margin-left: 19%;
 }
 
 #timer {
@@ -58,28 +93,62 @@ body {
     margin: auto;
 }
 
-#start,
-#submit {
-    height: 40px;
-    width: 150px;
-    margin: 22px;
-    text-align: center;
-    background: #410a80;
-    color: rgb(255, 253, 253);
-    font-size: 18px;
-    font-weight: 150;
-    border-radius: 10px 10px;
-    border: 2px solid #b0c4d8;
+.quiz-box {
+    height: auto;
+    width: 750px;
+    padding-left: 30px;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.quiz-box header {
+    height: 70px;
+}
+
+.quiz-box section {
+    padding-bottom: 40px;
+}
+
+.quiz-box .footer {
+    opacity: 30%;
+    font-size: 20px;
+    border-top: 2px solid;
+    padding: 15px;
+    display: none;
+}
+
+#optionList .choice_que {
+    padding: 20px;
+    margin: 7px;
+    width: 500px;
+    text-align: left;
+    background-color: #410a80;
+    color: white;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-#start:hover,
-#submit:hover {
+#optionList .choice_que:hover {
     background: #8d35ff;
-    color: #e7f1fa;
 }
 
-/*#optionList {
-    width: 100%;
-    position: absolute;
+#result {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+#result h3 {
+    font-size: 32px;
+    padding: 10px;
+}
+
+#result input{
+    height: 25px;
+}
+
+#result form {
+    padding: 30px;
 }
