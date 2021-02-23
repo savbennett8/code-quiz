@@ -1,4 +1,4 @@
-# Javascript Fundamentals Quiz
+# Coding Fundamentals Quiz
 
 ## About the Quiz
 *   When the start button is clicked, a timed coding quiz begins. 
@@ -8,4 +8,4 @@
 
 https://savbennett8.github.io/code-quiz/
 
-<img src="./screenshot.jpg">
+<img src="./screenshot.JPG">
