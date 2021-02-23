@@ -45,7 +45,8 @@ body {
 }
 
 #start:hover,
-#submit:hover {
+#submit:hover,
+.choice_que:hover {
     background: #8d35ff;
     color: #e7f1fa;
 }
@@ -98,8 +99,7 @@ body {
     width: 750px;
     padding-left: 30px;
     text-align: left;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
     transform: translate(-50%, -50%) scale(0.9);
 }
 
@@ -135,8 +135,7 @@ body {
 }
 
 #result {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
     transform: translate(-50%, -50%) scale(0.9);
 }
 
