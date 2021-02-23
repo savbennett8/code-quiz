@@ -173,13 +173,19 @@ let endQuiz = function() {
     })
 }
 
-backBtn.addEventListener("click", function() {
-    location.reload();
-})
-
 let scores = {};
 
 let saveScore = function() {
     localStorage.setItem("scores", scores);
 }
 
+viewScoresBtn.addEventListener("click", function() {
+    highScores.style.display = "block";
+    startSection.style.display = "none";
+    quizSection.style.display = "none";
+    topSection.style.display = "none";
+})
+
+backBtn.addEventListener("click", function() {
+    location.reload();
+})

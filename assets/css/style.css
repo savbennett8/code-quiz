@@ -49,9 +49,23 @@ body {
 
 #start:hover,
 #submit:hover,
-.choice_que:hover {
+.choice_que:hover,
+#clear-btn:hover,
+#back-btn:hover {
     background: #8d35ff;
     color: #e7f1fa;
+}
+
+#scores {
+    text-align: left;
+    margin-bottom: 100px;
+    font-size: smaller;
+    color: #410a80;
+}
+
+#scores:hover {
+    background-color: #410a80;
+    color: white;
 }
 
 .flex-container {
@@ -65,18 +79,6 @@ body {
 
 #timer {
     display: inline;
-}
-
-#scores {
-    text-align: left;
-    margin-bottom: 100px;
-    font-size: smaller;
-    color: #8d35ff;
-}
-
-#scores:hover {
-    color: #410a80;
-    text-decoration-line: underline;
 }
 
 #timer {
@@ -142,7 +144,8 @@ body {
     transform: translate(-50%, -50%) scale(0.9);
 }
 
-#result h3 {
+#result h3, 
+#high-scores h3 {
     font-size: 32px;
     padding: 10px;
 }
@@ -158,4 +161,8 @@ body {
 #high-scores {
     display: none;
     transform: translate(-50%, -50%) scale(0.9);
+}
+
+#scores-list {
+    height: 600px;
 }
