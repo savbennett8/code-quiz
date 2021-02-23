@@ -1,18 +1,8 @@
-//first screen needs high score link, timer, h1 "Coding Quiz Challenge" 
-    //explanation, & start quiz button
-//when button is clicked, the timer starts and first question appears
-//buttons need to highlight when I hover over them
-//a faded notification indicates whether it was correct or incorrect
-    //after it moves on to the next question
-//if incorrect, subtract 10 seconds from timer
-//time remaining when code is complete is the score
-//score page prompts for user's initials and submit
-//then they are taken to the high scores page
-//given the option to go back to start page or clear high scores
-
 let interval = 0;
 let correct = 0;
 let index = 0;
+//array to hold the high scores
+let scores = [];
 
 let topSection = document.querySelector("#top-content")
 let viewScoresBtn = document.querySelector("#scores")
@@ -20,31 +10,21 @@ let viewScoresBtn = document.querySelector("#scores")
 //Start Section
 let startSection = document.querySelector("#container");
 let timerEl = document.querySelector(".count");
-let quizTitle = document.querySelector("#title");
-let rules = document.querySelector("#rules");
 let start = document.querySelector("#start");
 
 //quiz section
 let quizSection = document.querySelector(".quiz-box");
-let quiz = document.querySelector("#quiz");
-let question = document.querySelector("#questionText");
 let footer = document.querySelector(".footer");
-
-//multiple choice
-let option1 = document.querySelector("#option1");
-let option2 = document.querySelector("#option2");
-let option3 = document.querySelector("#option3");
-let option4 = document.querySelector("#option4");
 
 //result section
 let result = document.querySelector("#result");
 let finalScore = document.querySelector("#final-score");
-let initials = document.querySelector("intials");
 let submit = document.querySelector("#submit");
 
 //high scores page
 let highScores = document.querySelector("#high-scores");
 let backBtn = document.querySelector("#back-btn");
+let clearBtn = document.querySelector("#clear-btn")
 
 //get 'h4' from quiz section
 let choice_que = document.querySelectorAll(".choice_que");
@@ -107,6 +87,7 @@ function countDown() {
     timeInterval = setInterval(function() {
         if (timeLeft <= 0) {
         //end quiz
+        endQuiz();
         clearInterval(timeInterval);
         } else {
             timerEl.textContent = timeLeft;
@@ -119,7 +100,7 @@ function countDown() {
 
 let loadData = function() {
     if (index < MCQS.length) {
-        question.innerText = MCQS[index].question;
+        questionText.innerText = MCQS[index].question;
         option1.innerText = MCQS[index].choice1;
         option2.innerText = MCQS[index].choice2;
         option3.innerText = MCQS[index].choice3;
@@ -144,7 +125,7 @@ choice_que.forEach((choices, choiceNo) =>{
             console.log("correct");
         } else {
             //display incorrect
-            footer.textContent = "incorrect";
+            footer.textContent = "Incorrect!";
             console.log("incorrect");
             //subtract 10 seconds from timer
             timeLeft = timeLeft - 10;
@@ -173,7 +154,7 @@ let endQuiz = function() {
     })
 }
 
-let scores = {};
+
 
 let saveScore = function() {
     localStorage.setItem("scores", scores);
