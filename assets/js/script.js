@@ -39,6 +39,10 @@ let option4 = document.querySelector("#option4");
 let result = document.querySelector("#result");
 let finalScore = document.querySelector("#final-score");
 let initials = document.querySelector("intials");
+let submit = document.querySelector("#submit");
+
+//high scores page
+let highScores = document.querySelector("#high-scores");
 
 //get 'h4' from quiz section
 let choice_que = document.querySelectorAll(".choice_que");
@@ -161,3 +165,9 @@ let endQuiz = function() {
     finalScore.innerText = timeLeft;
 }
 
+
+submit.addEventListener("click", function() {
+    highScores.style.display = "block";
+    result.style.display = "none";
+    
+})
