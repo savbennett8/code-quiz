@@ -15,6 +15,7 @@ let correct = 0;
 let index = 0;
 
 let topSection = document.querySelector("#top-content")
+let viewScoresBtn = document.querySelector("#scores")
 
 //Start Section
 let startSection = document.querySelector("#container");
@@ -43,12 +44,11 @@ let submit = document.querySelector("#submit");
 
 //high scores page
 let highScores = document.querySelector("#high-scores");
+let backBtn = document.querySelector("#back-btn");
 
 //get 'h4' from quiz section
 let choice_que = document.querySelectorAll(".choice_que");
 
-//store user's answer
-let userAns = undefined;
 
 let MCQS = [{
     question: "HTML stands for:",
@@ -93,7 +93,7 @@ start.addEventListener("click", function() {
     //first question is presented
     startSection.style.display = "none";
     quizSection.style.display = "block";
-    
+    //question data is loaded to page
     loadData();
     //countDown starts
     countDown();
@@ -113,7 +113,6 @@ function countDown() {
             timeLeft--;
         }
     }, 1000);
-    //setInterval(countDown,1000);
 }
 
 
@@ -163,11 +162,24 @@ let endQuiz = function() {
 
     clearInterval(timeInterval);
     finalScore.innerText = timeLeft;
+
+    submit.addEventListener("click", function() {
+        //saveScore();
+
+        highScores.style.display = "block";
+        result.style.display = "none";
+
+        //get all saved data from localStorage & append data to highScores page
+    })
 }
 
-
-submit.addEventListener("click", function() {
-    highScores.style.display = "block";
-    result.style.display = "none";
-    
+backBtn.addEventListener("click", function() {
+    location.reload();
 })
+
+let scores = {};
+
+let saveScore = function() {
+    localStorage.setItem("scores", scores);
+}
+

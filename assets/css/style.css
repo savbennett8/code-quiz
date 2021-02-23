@@ -15,7 +15,8 @@ body {
 
 #container,
 .quiz-box,
-#result {
+#result, 
+#high-scores {
     /*height: auto;
     width: 900px;*/
     text-align: center;
@@ -30,7 +31,9 @@ body {
 }
 
 #start,
-#submit {
+#submit,
+#clear-btn,
+#back-btn {
     height: 40px;
     width: 150px;
     margin: 22px;
